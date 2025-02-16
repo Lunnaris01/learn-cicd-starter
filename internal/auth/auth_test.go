@@ -52,7 +52,7 @@ func TestGetAPIApiKeyWithWhitespace(t *testing.T) {
 	if err != nil{
 		t.Fatalf("Expected err to be nil got %v instead", err.Error())
 	}
-	if key != "myApiKeY"{
+	if key != "myApiKey"{
 		t.Fatalf("Expected key to be: %s\nBut got key: %v", "myApiKey", key)
 	}
 	
