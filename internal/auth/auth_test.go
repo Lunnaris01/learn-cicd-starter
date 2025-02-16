@@ -6,7 +6,7 @@ import (
 )
 
 func TestGetAPIKeyWrongAuthentificationHeader(t *testing.T) {
-	req, err := http.NewRequest("GET", "http://boot.dev", nil)
+	req, _ := http.NewRequest("GET", "http://boot.dev", nil)
 	bad_header := req.Header
 	key, err := GetAPIKey(bad_header)
 	if err == nil || err.Error() != "no authorization header included" {
@@ -28,7 +28,7 @@ func TestGetAPIKeyWrongAuthentificationHeader(t *testing.T) {
 }
 
 func TestGetAPICorrectHeader(t *testing.T) {
-	req, err := http.NewRequest("GET", "http://boot.dev", nil)
+	req, _ := http.NewRequest("GET", "http://boot.dev", nil)
 	bad_header := req.Header
 	apikey := "myApiKey"
 	req.Header.Add("Authorization", "ApiKey "+apikey)
@@ -43,7 +43,7 @@ func TestGetAPICorrectHeader(t *testing.T) {
 }
 
 func TestGetAPIApiKeyWithWhitespace(t *testing.T) {
-	req, err := http.NewRequest("GET", "http://boot.dev", nil)
+	req, _ := http.NewRequest("GET", "http://boot.dev", nil)
 	bad_header := req.Header
 	apikey := "myApiKey is very special!"
 	req.Header.Add("Authorization", "ApiKey "+apikey)
@@ -58,7 +58,7 @@ func TestGetAPIApiKeyWithWhitespace(t *testing.T) {
 }
 
 func TestGetAPIApiKeyWithoutWhitespace(t *testing.T) {
-	req, err := http.NewRequest("GET", "http://boot.dev", nil)
+	req, _ := http.NewRequest("GET", "http://boot.dev", nil)
 	bad_header := req.Header
 	apikey := "myApiKey"
 	req.Header.Add("Authorization", "ApiKey"+apikey)
