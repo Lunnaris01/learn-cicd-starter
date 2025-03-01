@@ -4,7 +4,7 @@
 ![CD](https://github.com/Lunnaris01/learn-cicd-starter/actions/workflows/cd.yml/badge.svg)
 
 
-This repo contains the starter code for the "Notely" application for the "Learn CICD" course on [Boot.dev](https://boot.dev).
+This repo contains my Solution for the "Notely" application exercises for the "Learn CICD" course on [Boot.dev](https://boot.dev).
 
 ## Local Development
 
